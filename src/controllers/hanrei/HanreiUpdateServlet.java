@@ -69,7 +69,7 @@ public class HanreiUpdateServlet extends HttpServlet {
                 request.getSession().setAttribute("flush","更新完了");
                 request.getSession().removeAttribute("hanrei_id");
 
-                response.sendRedirect(request.getContextPath() + "/hanrei/index?id=${sessionScope.employee_id}");
+                response.sendRedirect(request.getContextPath() + "/category/index");
             }
         }
 	}

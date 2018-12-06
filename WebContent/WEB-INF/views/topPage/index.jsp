@@ -9,6 +9,7 @@
             </div>
         </c:if>
 
+
             <p><a href="<c:url value='/category/new'  />">新規カテゴリー登録</a></p>
     </c:param>
 </c:import>

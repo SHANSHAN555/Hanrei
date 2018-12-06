@@ -11,13 +11,14 @@
         </c:if>
 
 <h2>カテゴリー一覧</h2>
-<table>
+<table border="1">
     <tbody>
-        <c:forEach var="category" items="${category}" varStatus="status">
-            <tr>
+    <tr>
                 <th>id</th>
                 <th>カテゴリー名</th>
             </tr>
+        <c:forEach var="category" items="${category}" varStatus="status">
+
             <tr>
                 <td><c:out value="${category.id}"/></td>
                 <td><c:out value="${category.name}"/></td>
@@ -31,6 +32,7 @@
 <label for="id">id</label><br />
 <input type="text" name="id" value="${hanrei.id}"/>
 <br /><br />
+
 <label for="name">名称</label><br />
 <input type="text" name="name" value="${hanrei.name}"/>
 <br /><br />

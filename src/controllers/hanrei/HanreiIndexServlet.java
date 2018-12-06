@@ -40,16 +40,21 @@ public class HanreiIndexServlet extends HttpServlet {
 		    page = Integer.parseInt(request.getParameter("page"));
 		}catch(NumberFormatException e){}
 
-		List<Hanrei> hanrei = em.createNamedQuery("getAllHanrei", Hanrei.class)
+		List<Hanrei> h = em.createNamedQuery("getAllHanrei", Hanrei.class)
 		        .setFirstResult(10 * (page - 1))
 		        .setMaxResults(10)
 		        .getResultList();
 		long hanrei_count = em.createNamedQuery("getHanreiCount", Long.class)
 		        .getSingleResult();
 
-		request.setAttribute("hanrei", hanrei);
+		em.close();
+
+		request.setAttribute("hanrei", h);
 		request.setAttribute("page", page);
 		request.setAttribute("hanrei_count", hanrei_count);
+		request.setAttribute("category_id", request.getSession().getAttribute("category_id"));
+		request.getSession().removeAttribute("category_id");
+
 		if(request.getSession().getAttribute("flush") != null){
 		    request.setAttribute("flush", request.getSession().getAttribute("flush"));
 		    request.getSession().removeAttribute("flush");

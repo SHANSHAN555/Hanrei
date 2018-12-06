@@ -1,6 +1,7 @@
 package controllers.hanrei;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.servlet.RequestDispatcher;
@@ -13,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import models.Category;
 import models.Hanrei;
 import utils.DBUtil;
-
 /**
  * Servlet implementation class HanreiNewServlet
  */
@@ -33,16 +33,14 @@ public class HanreiNewServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		EntityManager em = DBUtil.createEntityManager();
-		Category category =em.find(Category.class, request.getParameter("employee_id"));
+	    EntityManager em = DBUtil.createEntityManager();
+	    List<Category> category = em.createNamedQuery("AllCategory", Category.class)
+	            .getResultList();
 
-		em.close();
-
+	    em.close();
+	    request.setAttribute("category", category);
 	    request.setAttribute("hanrei", new Hanrei());
 		request.setAttribute("_token", request.getSession().getId());
-		request.setAttribute("category", category);
-
-
 
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/hanrei/new.jsp");
 		rd.forward(request, response);

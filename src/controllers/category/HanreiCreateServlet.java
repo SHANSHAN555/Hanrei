@@ -1,4 +1,4 @@
-package controllers.hanrei;
+package controllers.category;
 
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -66,7 +66,7 @@ public class HanreiCreateServlet extends HttpServlet {
 	            em.getTransaction().commit();
 	            em.close();
 
-	            response.sendRedirect(request.getContextPath() + "/hanrei/index?id=${sessionScope.employee_id}");
+	            response.sendRedirect(request.getContextPath() + "/hanrei/index");
 	        }
 
 

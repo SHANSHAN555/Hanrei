@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name = "getAllHanrei",
-            query = "select h from Hanrei as h "
+            query = "select h from Hanrei as h order by h.id desc"
             ),
     @NamedQuery(
             name = "getHanreiCount",

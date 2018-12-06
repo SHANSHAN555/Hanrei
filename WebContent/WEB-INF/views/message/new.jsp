@@ -7,6 +7,6 @@
              <c:import url="_form.jsp"/>
         </form>
 
-        <p><a href="<c:url value='/message/index'  />">一覧に戻る</a></p>
+        <p><a href="<c:url value='/message/index'  />">依頼一覧に戻る</a></p>
     </c:param>
 </c:import>

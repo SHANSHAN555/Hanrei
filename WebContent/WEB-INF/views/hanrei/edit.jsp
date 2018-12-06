@@ -8,7 +8,7 @@
             <c:import url="_form.jsp"/>
         </form>
         <br />
-        <p><a href="<c:url value='/hanrei/index'  />">一覧に戻る</a></p>
+        <p><a href="<c:url value='/category/index'  />">カテゴリー一覧に戻る</a></p>
         <br />
 
         <p><a href="#" onclick="confirmDestroy();">削除する</a></p>

@@ -9,7 +9,9 @@
     </div>
 </c:if>
 
-<label for="name">カテゴリー名</label><br/>
+
+
+<label for="name">カテゴリー</label><br/>
 <input type="text" name="name" value="${category.name}"/>
 <br /><br />
 

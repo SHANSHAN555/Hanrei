@@ -29,6 +29,7 @@
                             <c:out value="${hanrei.year}"/>
                         </td>
                     </tr>
+
                     <tr>
                         <th>登録日時</th>
                         <td><fmt:formatDate value="${hanrei.created_at}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
@@ -40,7 +41,7 @@
                     </tbody>
                 </table>
 
-                <p><a href="<c:url value='/hanrei/edit?id=${hanrei.id}'  />">編集する</a></p>
+                <p><a href="<c:url value='/hanrei/edit?id=${hanrei.id}'  />">編集する</a> </p>
             </c:when>
 
 
@@ -48,6 +49,6 @@
                 <h2>データが見つかりませんでした</h2>
             </c:otherwise>
         </c:choose>
-        <p><a href="<c:url value='/hanrei/index'   />">一覧に戻る</a></p>
+        <p><a href="<c:url value='/category/index'   />">カテゴリー一覧に戻る</a></p>
     </c:param>
 </c:import>

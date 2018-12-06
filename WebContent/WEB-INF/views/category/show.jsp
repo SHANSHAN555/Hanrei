@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<c:import url="../layout_category/app.jsp">
+<c:import url="../layout/app.jsp">
     <c:param name="content">
+
         <table>
             <tr>
                 <th>番号</th>
@@ -29,15 +30,16 @@
             <tr>
                 <th>詳細</th>
                 <td>
-                <c:if test="${sessionScope.employee_id != null}">
-                    <a href="<c:url value='/hanrei/index?id=${sessionScope.employee_id}'  />">判例一覧</a>&nbsp;
-                </c:if>
+                    <a href="<c:url value='/hanrei/index'  />">判例集へ</a>
                 </td>
             </tr>
+
         </table>
 
             <p><a href="<c:url value='/category/edit?id=${category.id}'  />">編集する</a></p>
         <br />
-        <p><a href="<c:url value='/category/index'  />">一覧に戻る</a></p>
+
+
+        <p><a href="<c:url value='/category/index'  />">カテゴリー一覧に戻る</a></p>
     </c:param>
 </c:import>

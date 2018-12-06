@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Category;
 import models.Hanrei;
 import utils.DBUtil;
 
@@ -36,14 +35,12 @@ public class HanreiEditServlet extends HttpServlet {
 	    EntityManager em = DBUtil.createEntityManager();
 
 	    Hanrei h = em.find(Hanrei.class, Integer.parseInt(request.getParameter("id")));
-        Category category =em.find(Category.class, request.getParameter("employee_id"));
 
         em.close();
 
         request.setAttribute("hanrei", h);
         request.setAttribute("_token", request.getSession().getId());
         request.getSession().setAttribute("hanrei_id", h.getId());
-        request.setAttribute("category", category);
 
 
 
